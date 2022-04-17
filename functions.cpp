@@ -12,7 +12,7 @@ void plus(float arr1[3][3], float arr2[3][3]) { //Сложение матриц
 		std::cout << std::endl;
 	}
 }
-void minus(float arr1[3][3], float arr2[3][3]) {
+void minus(float arr1[3][3], float arr2[3][3]) {//Вычитание матриц
 	setlocale(LC_ALL, "rus");
 	float arr[3][3];
 	for (int i = 0; i < 3; i++)
