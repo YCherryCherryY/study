@@ -1,7 +1,7 @@
 #include "functions.h"
 #include <iostream>
 
-void plus(float arr1[3][3], float arr2[3][3]) { //Сложение
+void plus(float arr1[3][3], float arr2[3][3]) { //Сложение матриц
 	setlocale(LC_ALL, "rus");
 	float arr[3][3];
 	for (int i = 0; i < 3; i++)
