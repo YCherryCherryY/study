@@ -1,11 +1,14 @@
 #include <iostream>
 #include "functions.h"
+/*! \brief error is function with notify about error 
+*/
 void error() {
 	std::cout << "Произошла неизвестная ошибка.";
 }
 int main() {
 	setlocale(LC_ALL, "rus");
-	int c = 0;
+	//!Var for defend from uncorrected input
+	int c = 0; 
 	float m1[3][3], m2[3][3], res[3][3];
 
 	//Информационное сообщение
