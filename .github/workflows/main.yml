@@ -15,25 +15,23 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
+    my_first_job:
+      
+        runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
+        steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: chekout
-      - uses: actions/checkout@v1
+          - name: chekout
+            uses: actions/checkout@v1
 
       
-      - name: check
-        id: check_files
-        uses: andstor/file-existence-action@v1
-        with:
-          files: "README.txt"
+          - name: check
+            id: check_files
+            uses: andstor/file-existence-action@v1
+            with:
+              files: "README.txt"
 
-      - name: File exists
-        if: steps.check_files.outputs.files_exists == 'true'
-        # Only runs if all of the files exists
-        run: echo All files exists!
+          - name: File exists
+            if: steps.check_files.outputs.files_exists == 'true'
+            # Only runs if all of the files exists
+            run: echo All files exists!
