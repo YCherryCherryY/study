@@ -64,7 +64,7 @@ jobs:
         - name: compile
           run: |
             sudo apt-get install g++-10
-            g++ main.cpp
+            g++ main.cpp -o main.exe
             ls
         - name: Make exe
           uses: actions/upload-artifact@v2
