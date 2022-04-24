@@ -35,24 +35,33 @@ jobs:
             if: steps.check_files.outputs.files_exists == 'true'
             # Only runs if all of the files exists
             run: echo All files exists!
-          - uses: actions/checkout@v2
-          - name: doxygen
-            uses: mattnotmitt/doxygen-action@v1.9.2
+          # - uses: actions/checkout@v2
+          # - name: doxygen
+            # uses: mattnotmitt/doxygen-action@v1.9.2
               
-            with: 
-              doxyfile-path: './Doxyfile'
-          - name: upload
-            uses: actions/upload-artifact@v2
-            with: 
-              path: documentation
-              name: Doxygen
-          - name: push
-            uses: cpina/github-action-push-to-another-repository@main
-            env:
-               API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-            with: 
-              source-directory: 'documentation'
-              destination-github-username: 'YCherryCherryY'
-              destination-repository-name: 's.io'
-              user-email: 'illolol692@gmail.com'
+           # with: 
+            #  doxyfile-path: './Doxyfile'
+          # - name: upload
+            # uses: actions/upload-artifact@v2
+            # with: 
+             # path: documentation
+            #  name: Doxygen
+          # - name: push
+            # uses: cpina/github-action-push-to-another-repository@main
+            # env:
+               # API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+            # with: 
+              # source-directory: 'documentation'
+              # destination-github-username: 'YCherryCherryY'
+              # destination-repository-name: 's.io'
+              # user-email: 'illolol692@gmail.com'
              # commit-message: 'It documantation'
+             
+    job_for_compile:
+      runs-on: ubuntu-latest
+      steps:
+        - name: compile
+          run: |
+            sudo apt-get install g++-10
+            g++ Maths.cpp
+            ls
