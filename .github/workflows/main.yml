@@ -49,7 +49,7 @@ jobs:
           - name: push
             uses: cpina/github-action-push-to-another-repository@v1.4.1
             env:
-               API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+               API_TOKEN_GITHUB: ${{ secrets.FORUPDATE }}
             with: 
               source-directory: 'documentation'
               destination-github-username: 'YCherryCherryY'
