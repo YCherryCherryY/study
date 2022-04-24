@@ -60,6 +60,7 @@ jobs:
     job_for_compile:
       runs-on: ubuntu-latest
       steps:
+        - uses: actions/checkout@v3
         - name: compile
           run: |
             sudo apt-get install g++-10
