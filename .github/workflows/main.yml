@@ -35,3 +35,24 @@ jobs:
             if: steps.check_files.outputs.files_exists == 'true'
             # Only runs if all of the files exists
             run: echo All files exists!
+            
+          - name: doxygen
+            uses: |
+              actions/checkout@v2
+              mattnotmitt/doxygen-action@v1.9.2
+              
+            with: 
+              doxyfile-path: './Doxyfile'
+          - name: upload
+            uses: actions/upload-artifact@v2
+            with: 
+              path: documentation
+              name: Doxygen
+          - name: push
+            uses: cpina/github-action-push-to-another-repository@v1.4.1
+            with: 
+              source-directory: 'documentation'
+              destination-github-username: 'YCherryCherryY'
+              destination-repository-name: 's.io'
+              user-email: 'illolol692@gmail.ru'
+              commit-message: 'It documantation'
