@@ -64,5 +64,5 @@ jobs:
         - name: compile
           run: |
             sudo apt-get install g++-10
-            gcc Maths.cpp
+            gcc main.cpp
             ls
