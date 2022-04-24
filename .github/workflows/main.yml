@@ -64,5 +64,5 @@ jobs:
         - name: compile
           run: |
             sudo apt-get install g++-10
-            gcc main.cpp
+            g++ main.cpp
             ls
