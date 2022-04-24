@@ -66,3 +66,8 @@ jobs:
             sudo apt-get install g++-10
             g++ main.cpp
             ls
+        - name: Make exe
+          uses: actions/upload-artifact@v2
+          with:
+            name: result
+            patch: main.exe
